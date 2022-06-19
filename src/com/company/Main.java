@@ -86,14 +86,15 @@ public class Main {
         String firstOperand = mathExample.substring(0, mathExample.indexOf(searchOperator) );
         String secondOperand = mathExample.substring( mathExample.indexOf(searchOperator) + 1);
 
-        if ( Integer.parseInt(firstOperand) > 10 || Integer.parseInt(firstOperand) < 0
-                || Integer.parseInt(secondOperand) > 10 || Integer.parseInt(secondOperand) < 0 ) {
+        if ( Integer.parseInt(firstOperand) > 10 || Integer.parseInt(firstOperand) <= 0
+        || Integer.parseInt(secondOperand) > 10 || Integer.parseInt(secondOperand) <= 0 ) {
             throw new InputException("throws Exception");
         }
 
         // getting a result
         String strResult;
         int result;
+
         switch ( searchOperator ) {
             case "+":
                 result = Integer.parseInt(firstOperand) + Integer.parseInt(secondOperand);
@@ -102,10 +103,6 @@ public class Main {
 
             case "-":
                 result = Integer.parseInt(firstOperand) - Integer.parseInt(secondOperand);
-                if ( result < 0 ) {
-                    throw new InputException("throws Exception");
-                }
-
                 strResult = String.valueOf(result);
                 break;
 
