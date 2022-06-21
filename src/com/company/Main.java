@@ -132,7 +132,7 @@ public class Main {
                     }
 
                     if (fistRomanOperator == 0 || secondRomanOperator == 0) {
-                        throw new InputException("throws Exception //т.к. используются одновременно разные системы счисления");
+                        throw new InputException("throws Exception //т.к. на вход принимаются только числа от 1 до 10 и от I до X включительно");
                     }
 
                     result = fistRomanOperator + secondRomanOperator;
@@ -174,8 +174,8 @@ public class Main {
 
                     result = fistRomanOperator - secondRomanOperator;
 
-                    if ( result < 0 ) {
-                        throw new InputException("throws Exception //т.к. в римской системе нет отрицательных чисел");
+                    if ( result <= 0 ) {
+                        throw new InputException("throws Exception //т.к. римские числа могут быть только положительные числа");
                     }
 
                     strResult = String.valueOf(result);
@@ -261,7 +261,7 @@ public class Main {
                 // arabic DIVIDE result
                 else {
                     if (Integer.parseInt(secondOperand) == 0) {
-                        throw new InputException("throws Exception //т.к. делить на 0 нельзя");
+                        throw new InputException("throws Exception //т.к. на 0 делить нельзя");
                     }
 
                     if ( Integer.parseInt(firstOperand) > 10 || Integer.parseInt(firstOperand) <= 0
